@@ -1,0 +1,23 @@
+.navbar-container {
+  position: fixed;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+}
+
+.navbar-box {
+  display: flex;
+  justify-content: center;
+  padding: 0.625rem;
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+}
+
+.navbar-logo {
+  position: relative;
+  align-self: center;
+  left: 20px;
+  font-size: 1rem;
+  font-weight: bold;
+}
