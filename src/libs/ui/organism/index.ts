@@ -4,6 +4,7 @@ export { default as Navbar } from './nav/nav'
 // home components
 
 export { default as HomeHero } from './home/homehero/homehero'
+export { default as Socials } from './home/socials/socials'
 
 // blog components
 

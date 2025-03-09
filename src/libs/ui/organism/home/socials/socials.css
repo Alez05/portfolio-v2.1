@@ -1,0 +1,124 @@
+/* Font Face */
+@font-face {
+  font-family: 'pf';
+  src: url('/font/pf.eot?fgvmkf');
+  src: url('/font/pf.eot?fgvmkf#iefix') format('embedded-opentype'),
+       url('/font/pf.woff?fgvmkf') format('woff'),
+       url('/font/pf.ttf?fgvmkf') format('truetype'),
+       url('/font/pf.svg?fgvmkf#pf') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* Generic Icon Class */
+.icon {
+  font-family: 'pf' !important;
+  font-size: 24px;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: inline-block;
+}
+
+/* Socials Wrapper */
+.socials-wrapper {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.socials-wrapper a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.socials-wrapper a:hover {
+  color: #007bff;
+}
+
+/* Icon Mapping */
+.icon::before {
+  display: inline-block;
+  font-family: 'pf' !important;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none;
+  speak: never;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Individual Icons */
+.icon.librarybooks::before { content: "\e928"; }
+.icon.email::before { content: "\e900"; }
+.icon.locationon::before { content: "\e902"; }
+.icon.settings::before { content: "\e929"; }
+.icon.imagesearchroller::before { content: "\e901"; }
+.icon.bedtime::before { content: "\e92a"; }
+.icon.fire::before { content: "\e92b"; }
+.icon.facebook2::before { content: "\e92c"; }
+.icon.tag::before { content: "\e92d"; }
+.icon.book::before { content: "\e92e"; }
+.icon.arond::before { content: "\e903"; }
+.icon.briefcase::before { content: "\e904"; }
+.icon.coffee::before { content: "\e905"; }
+.icon.downloadcl::before { content: "\e906"; }
+.icon.facebook::before { content: "\e907"; }
+.icon.file::before { content: "\e908"; }
+.icon.filetext::before { content: "\e909"; }
+.icon.github::before { content: "\e90a"; }
+.icon.home::before { content: "\e90b"; }
+.icon.image1::before { content: "\e90c"; }
+.icon.link1::before { content: "\e90d"; }
+.icon.linkedin::before { content: "\e90e"; }
+.icon.mail::before { content: "\e90f"; }
+.icon.messagec::before { content: "\e910"; }
+.icon.messages::before { content: "\e911"; }
+.icon.paperclip::before { content: "\e92f"; }
+.icon.phone::before { content: "\e912"; }
+.icon.save::before { content: "\e913"; }
+.icon.tool::before { content: "\e930"; }
+.icon.home2::before { content: "\f015"; }
+.icon.image3::before { content: "\f03e"; }
+.icon.photo::before { content: "\f03e"; }
+.icon.picture2::before { content: "\f03e"; }
+.icon.cogs::before { content: "\f085"; }
+.icon.gears::before { content: "\f085"; }
+.icon.bookmark::before { content: "\f097"; }
+.icon.facebook1::before { content: "\f09a"; }
+.icon.facebook3::before { content: "\f09a"; }
+.icon.github1::before { content: "\f09b"; }
+.icon.linkedin1::before { content: "\f0e1"; }
+.icon.envelopeo::before { content: "\e914"; }
+.icon.envelopec::before { content: "\e915"; }
+.icon.envelopec1::before { content: "\e916"; }
+.icon.flag::before { content: "\e917"; }
+.icon.flag1::before { content: "\e918"; }
+.icon.star::before { content: "\e919"; }
+.icon.star1::before { content: "\e91a"; }
+.icon.information::before { content: "\e91b"; }
+.icon.information1::before { content: "\e91c"; }
+.icon.clipboardtext::before { content: "\e91d"; }
+.icon.clipboardtext1::before { content: "\e91e"; }
+.icon.folderdownload::before { content: "\e91f"; }
+.icon.apparel::before { content: "\e931"; }
+.icon.bookmark2::before { content: "\e932"; }
+.icon.envelope::before { content: "\e921"; }
+.icon.heart::before { content: "\e922"; }
+.icon.home1::before { content: "\e923"; }
+.icon.lightbulb::before { content: "\e924"; }
+.icon.location::before { content: "\e925"; }
+.icon.notifications::before { content: "\e926"; }
+.icon.notificationoutline::before { content: "\e927"; }
+.icon.photo1::before { content: "\e933"; }
+.icon.usersolidcircle::before { content: "\e934"; }
+.icon.wrench::before { content: "\e935"; }
+.icon.zoomin::before { content: "\e936"; }
+.icon.zoomout::before { content: "\e937"; }

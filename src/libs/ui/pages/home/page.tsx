@@ -5,6 +5,9 @@ const HomePage = () => {
   return (
     <PageLayout>
       <HomeHero />
+      <HomeHero />
+      <HomeHero />
+      <HomeHero />
     </PageLayout>
   )
 }

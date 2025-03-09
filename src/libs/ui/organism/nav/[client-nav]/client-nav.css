@@ -1,10 +1,11 @@
+/*Client component*/
 .client-container {
   display: flex;
   gap: 18px;
   justify-content: flex-end;
   position: relative;
   width: 100%;
-  padding: 25px;
+  /* padding: 10px;  */ /* Maybe will add later */
   flex-direction: row;
 }
 

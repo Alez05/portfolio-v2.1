@@ -2,8 +2,9 @@
 import React from 'react'
 import './homehero.css'
 import homeData from '@data/homehero.json'
+import { Socials } from '../socials'
 
-const HomeHero = () => {
+const HomeHero = async () => {
   return (
     <div className="home-wrapper">
       <section className="home-section">
@@ -27,6 +28,7 @@ const HomeHero = () => {
           />
         </div>
       </section>
+      <Socials icon="facebook2" />
     </div>
   )
 }
