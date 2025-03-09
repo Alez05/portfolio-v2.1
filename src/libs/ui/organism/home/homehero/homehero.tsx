@@ -1,4 +1,5 @@
 // Section1a component is for home page, which will be herobox with tile, description and an image.
+/* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import './homehero.css'
 import homeData from '@data/homehero.json'

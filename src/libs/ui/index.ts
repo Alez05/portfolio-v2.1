@@ -1,6 +1,9 @@
 //organism
 export { default as Maintenance } from './organism/maintenance/maintenance'
 export { default as Navbar } from './organism/nav/nav'
+export { default as ServicePrev } from './organism/home/serviceprev/serviceprev'
+export { default as HomeHero } from './organism/home/homehero/homehero'
+export { default as Socials } from './organism/home/socials/socials'
 
 //template
 
