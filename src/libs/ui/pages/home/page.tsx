@@ -1,13 +1,11 @@
-import { HomeHero } from '../../organism'
+import { HomeHero, ServicePrev } from '@ui/organism/home'
 import { PageLayout } from '../../template'
 
 const HomePage = () => {
   return (
     <PageLayout>
       <HomeHero />
-      <HomeHero />
-      <HomeHero />
-      <HomeHero />
+      <ServicePrev />
     </PageLayout>
   )
 }
