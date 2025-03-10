@@ -1,6 +1,6 @@
 .home-wrapper {
   margin: 5rem auto;
-  padding: 0.5rem;
+  padding: 1rem;
   display: flex;
 }
 
@@ -82,5 +82,4 @@
   width: 400px;
   height: auto;
   border-radius: 50%;
-
 }
