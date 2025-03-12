@@ -1,15 +1,12 @@
-/* home hero data - dynamic approach */
-export const homeHero = [
-  { key: 'title', value: 'webdevalex' },
+export const homeHeroList = [
   {
-    key: 'description',
-    value:
+    title: 'webdevalex',
+    description:
       'Frontend Developer & Designer based in London. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    image: 'https://avatars2.githubusercontent.com/u/1011776?s=460&v=4',
+    readMore: 'Read more',
+    readMoreLink: '/services',
+    contactMe: 'Contact me',
+    contactMeLink: '/contact',
   },
-  {
-    key: 'image',
-    value: 'https://avatars2.githubusercontent.com/u/1011776?s=460&v=4',
-  },
-  { key: 'readMore', value: 'Read more' },
-  { key: 'contactMe', value: 'Contact me' },
 ] as const

@@ -1,29 +1,35 @@
-// Section1a component is for home page, which will be herobox with tile, description and an image.
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import './homehero.css'
-import homeData from '@data/homehero.json'
 import { Socials } from '../socials'
+import { getHomeHeroAction } from './action'
+import { HomeHeroData } from './homehero.type.ts'
 
 const HomeHero = async () => {
+  const heroConfig: HomeHeroData | null = await getHomeHeroAction()
+
+  if (!heroConfig) {
+    return <p>Error loading hero section.</p>
+  }
+
   return (
     <div className="home-wrapper">
       <section className="home-section">
         <div className="htext-wrapper">
-          <h1 className="home-title">{homeData.title}</h1>
-          <p className="home-description">{homeData.description}</p>
+          <h1 className="home-title">{heroConfig.title}</h1>
+          <p className="home-description">{heroConfig.description}</p>
           <div className="hlink-wrapper">
-            <a href="/contact" className="link-red">
-              {homeData.contactMe}
+            <a href={heroConfig.contactMeLink} className="link-red">
+              {heroConfig.contactMe}
             </a>
-            <a href="/services" className="link-white">
-              {homeData.readMore}
+            <a href={heroConfig.readMoreLink} className="link-white">
+              {heroConfig.readMore}
             </a>
           </div>
         </div>
         <div className="himage-wrapper">
           <img
-            src="./image/profile.png"
+            src={heroConfig.image}
             alt="alex working at the desk"
             className="himage"
           />
