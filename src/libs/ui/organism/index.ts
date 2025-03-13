@@ -13,6 +13,8 @@ export { default as ServicePrev } from './home/serviceprev/serviceprev'
 
 // contact components
 
+export { ContactHero } from './contact/contacthero/contacthero'
+
 // admin components
 
 // projects components

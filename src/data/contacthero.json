@@ -1,0 +1,11 @@
+{
+  "contactHero": {
+    "title": "Get in Touch",
+    "image": "/image/profile.jpg",
+    "description": "Have a question or want to work together? Feel free to reach out, and I'll get back to you as soon as possible.",
+    "button": {
+      "text": "To contact form",
+      "cta": "/contact-form"
+    }
+  }
+}

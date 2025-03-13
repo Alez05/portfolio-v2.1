@@ -11,15 +11,18 @@
   padding: 5rem;
   gap: 3rem;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center; /* Ensures vertical alignment */
+  justify-content: space-between; /* Keeps text and image apart */
   box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
 }
 
 .htext-wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center; /* Centers content vertically */
+  align-items: flex-start; /* Aligns text and buttons to the left */
   width: 50%;
-  gap: 2rem;
+  gap: 1.5rem; /* Adjust spacing between elements */
 }
 
 .home-title {
@@ -34,10 +37,9 @@
 
 .hlink-wrapper {
   display: flex;
-  flex-direction: row;
-  width: auto;
+  flex-direction: row; /* Keep buttons in a row */
   gap: 1rem;
-  padding: 1.2rem;
+  padding-top: 1rem; /* Adds spacing from description */
 }
 
 .link-red, .link-white{
