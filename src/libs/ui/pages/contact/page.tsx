@@ -1,9 +1,10 @@
-import { PageLayout, Maintenance } from '@/libs/ui'
+import { PageLayout } from '@/libs/ui'
+import { ContactHero } from '../../organism'
 
 const ContactPage = () => {
   return (
     <PageLayout>
-      <Maintenance pageTitle="Blog" />
+      <ContactHero />
     </PageLayout>
   )
 }

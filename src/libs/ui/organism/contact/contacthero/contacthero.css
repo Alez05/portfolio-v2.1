@@ -1,0 +1,81 @@
+.ch-main {
+  margin: 5rem auto;
+  display: flex;
+  padding: 1rem;
+}
+
+.ch-container {
+  display: flex;
+  width: 100%;
+  height: 60vh; /* Reduce height to move content up */
+  padding: 2rem 5rem; /* Reduce padding to allow more space at the top */
+  gap: 3rem;
+  flex-direction: row;
+  align-items: flex-start; /* Align items to the top */
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+}
+
+
+
+.ch-tcontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Move content to the top */
+  align-items: flex-start; /* Align the text to the left */
+  width: 50%;
+  gap: 1.5rem; /* Space between title, description, and button */
+}
+
+.ch-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.ch-description {
+  font-size: 1rem;
+  color: #333;
+  width: 80%;
+}
+
+.ch-licontent {
+  display: flex;
+  flex-direction: row; /* Keep button layout in a row */
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.ch-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 7px 7px 0 rgb(0, 0, 0);
+  font-size: 1rem;
+  border-radius: 1px;
+  text-decoration: none;
+  transition: 0.3s;
+  border: 1px solid hsl(0, 12%, 10%);
+  font-weight: 500;
+  height: 45px;
+  background-color: hsl(0, 81%, 51%);
+  color: white;
+  width: 140px;
+}
+
+.ch-link:hover {
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.ch-imwrapper {
+  display: flex;
+  justify-content: center;
+  width: 30%;
+}
+
+.ch-image {
+  width: 300px;
+  height: auto;
+  border-radius: 50%;
+}
