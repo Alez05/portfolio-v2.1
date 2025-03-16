@@ -14,6 +14,10 @@ export const ContactHero = async () => {
     )
   }
 
+  const { cta, text } = contactHero.link || {}
+
+  const { src, alt } = contactHero.image || {}
+
   return (
     <div className="ch-main">
       <div className="ch-container">
@@ -21,17 +25,13 @@ export const ContactHero = async () => {
           <h1 className="ch-title">{contactHero?.title}</h1>
           <p className="ch-description">{contactHero?.description}</p>
           <div className="ch-licontent">
-            <a className="ch-link" href={contactHero?.link?.cta}>
-              {contactHero?.link?.text}
+            <a className="ch-link" href={cta}>
+              {text}
             </a>
           </div>
         </section>
         <div className="ch-imwrapper">
-          <img
-            src={contactHero?.image?.src}
-            alt={contactHero?.image?.alt}
-            className="ch-image"
-          />
+          <img src={src} alt={alt} className="ch-image" />
         </div>
       </div>
     </div>
