@@ -25,7 +25,7 @@ export const ContactHero = async () => {
           <h1 className="ch-title">{contactHero?.title}</h1>
           <p className="ch-description">{contactHero?.description}</p>
           <div className="ch-licontent">
-            <a className="ch-link" href={cta}>
+            <a className="ch-link" href={cta} target="_parent">
               {text}
             </a>
           </div>
