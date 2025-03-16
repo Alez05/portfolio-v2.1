@@ -14,6 +14,7 @@ export { default as ServicePrev } from './home/serviceprev/serviceprev'
 // contact components
 
 export { ContactHero } from './contact/contacthero/contacthero'
+export { ContactForm } from './contact/contactform/contactform'
 
 // admin components
 
