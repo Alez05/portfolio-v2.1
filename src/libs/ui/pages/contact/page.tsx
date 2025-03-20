@@ -1,9 +1,10 @@
 import { PageLayout } from '@/libs/ui'
-import { ContactForm, ContactHero } from '../../organism'
+import { ContactForm, ContactHero, Socials } from '../../organism'
 
 const ContactPage = () => {
   return (
     <PageLayout>
+      <Socials  />
       <ContactHero />
       <ContactForm />
     </PageLayout>

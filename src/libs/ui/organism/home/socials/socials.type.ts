@@ -70,5 +70,5 @@ export const iconList = {
 export type IconType = keyof typeof iconList
 
 export type SocialsType = {
-  icon: IconType
+  icon?: IconType
 }
