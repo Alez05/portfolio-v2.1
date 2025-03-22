@@ -1,3 +1,11 @@
+type TField = {
+  type: string
+  id: string
+  label: string
+  placeholder: string
+  required: boolean
+}
+
 export type TFormField = {
   form: {
     header: {
@@ -9,13 +17,7 @@ export type TFormField = {
         cta: string
       }
     }
-    field: {
-      type: string
-      id: string
-      label: string
-      placeholder: string
-      required: boolean
-    }[]
+    field: TField[] // <-- This is the type of field tbm
   }
   button: {
     id: string

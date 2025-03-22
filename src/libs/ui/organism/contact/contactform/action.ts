@@ -2,7 +2,7 @@
 
 import { TFormField } from './contactform.type'
 
-export const getContactFormAction = async (): Promise<TFormField | null> => {
+export const getContactFormAction = async (): Promise<TFormField> => {
   try {
     const response = await fetch('http://localhost:3000/api/contactform')
 
@@ -14,6 +14,24 @@ export const getContactFormAction = async (): Promise<TFormField | null> => {
     return (await response.json()) as TFormField
   } catch (error) {
     console.error('Error fetching contact form data:', error)
-    return null
+    return {
+      form: {
+        header: {
+          subtitle: '',
+          title: '',
+          description: '',
+          link: {
+            text: '',
+            cta: '',
+          },
+        },
+        field: [],
+      },
+      button: {
+        id: '',
+        label: '',
+        type: 'submit',
+      },
+    }
   }
 }
