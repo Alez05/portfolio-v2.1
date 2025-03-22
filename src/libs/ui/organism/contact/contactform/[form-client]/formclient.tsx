@@ -1,16 +1,14 @@
-import { getContactFormAction } from './action'
-import './contactform.css'
+'use client'
+import React, { useState } from 'react'
+import { TFormField } from '../contactform.type'
+import '../contactform.css'
 
-export const ContactForm = async () => {
-  const formData = await getContactFormAction()
+type TContactForm = {
+  formData: TFormField
+}
 
-  if (!formData) {
-    return (
-      <div className="cf-error">
-        <p>Failed to load content. Please try again later.</p>
-      </div>
-    )
-  }
+export const ClientForm = ({ formData }: TContactForm) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const { header, field } = formData?.form || {}
   const { subtitle, title } = formData?.form.header || {}
@@ -20,6 +18,11 @@ export const ContactForm = async () => {
     '{link}',
     `<a href="${header.link.cta}" class="cf-link">${header.link.text}</a>`
   )
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+  }
 
   return (
     <section id="contact-form" className="cf-parent">
@@ -57,12 +60,17 @@ export const ContactForm = async () => {
             </div>
           ))}
           {formData?.button ? (
-            <button type={type} id={id} className="cf-button">
-              {label}
+            <button
+              type={type}
+              id={id}
+              className="cf-button"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? 'Submitting...' : label}
             </button>
           ) : (
-            <button type="submit" className="cf-button">
-              Submit
+            <button type="submit" className="cf-button" disabled={isSubmitting}>
+              {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
           )}
         </form>
