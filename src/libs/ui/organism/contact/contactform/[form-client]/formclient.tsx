@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { TFormField } from '../contactform.type'
 import '../contactform.css'
 
@@ -8,7 +8,10 @@ type TContactForm = {
 }
 
 export const ClientForm = ({ formData }: TContactForm) => {
+  const formRef = useRef<HTMLFormElement>(null)
+
   const [submissionError, setSubmissionError] = useState<string | null>(null)
+
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const { header, field } = formData?.form || {}
@@ -33,23 +36,26 @@ export const ClientForm = ({ formData }: TContactForm) => {
         throw new Error('All fields are required.')
       }
 
-      const response = await fetch('api/contactform', {
+      const response = await fetch('/api/contactform', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json', // fixed from earlier
         },
         body: JSON.stringify(data),
       })
+
       if (!response.ok) {
         throw new Error('Failed to submit form. Please try again.')
       }
 
-      // Handle success
+      // ✅ Success!
       alert('Form submitted successfully!')
-      e.currentTarget.reset()
+      if (formRef.current) {
+        formRef.current.reset()
+      }
     } catch (error) {
       setSubmissionError(
-        error instanceof Error ? error.message : 'An error occured.'
+        error instanceof Error ? error.message : 'An error occurred.'
       )
     } finally {
       setIsSubmitting(false)
@@ -65,7 +71,7 @@ export const ClientForm = ({ formData }: TContactForm) => {
           className="cf-description"
           dangerouslySetInnerHTML={{ __html: description || '' }}
         />
-        <form className="cf-form" onSubmit={handleSubmit}>
+        <form ref={formRef} className="cf-form" onSubmit={handleSubmit}>
           {field.map((field) => (
             <div key={field.id} className="cf-field">
               <label htmlFor={field.id} className="cf-label">
