@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import { TFormField } from '../contactform.type'
 import '../contactform.css'
 
@@ -10,6 +10,8 @@ type TContactForm = {
 export const ClientForm = ({ formData }: TContactForm) => {
   const [submissionError, setSubmissionError] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const formRef = useRef<HTMLFormElement>(null)
 
   const { header, field } = formData?.form || {}
   const { subtitle, title } = formData?.form.header || {}
@@ -46,7 +48,9 @@ export const ClientForm = ({ formData }: TContactForm) => {
 
       // Handle success
       alert('Form submitted successfully!')
-      e.currentTarget.reset()
+      if (formRef.current) {
+        formRef.current.reset()
+      }
     } catch (error) {
       setSubmissionError(
         error instanceof Error ? error.message : 'An error occured.'
@@ -65,7 +69,7 @@ export const ClientForm = ({ formData }: TContactForm) => {
           className="cf-description"
           dangerouslySetInnerHTML={{ __html: description || '' }}
         />
-        <form className="cf-form" onSubmit={handleSubmit}>
+        <form className="cf-form" onSubmit={handleSubmit} ref={formRef}>
           {field.map((field) => (
             <div key={field.id} className="cf-field">
               <label htmlFor={field.id} className="cf-label">
