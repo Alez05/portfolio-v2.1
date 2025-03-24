@@ -8,6 +8,7 @@ type TContactForm = {
 }
 
 export const ClientForm = ({ formData }: TContactForm) => {
+  const [submissionError, setSubmissionError] = useState<string | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const { header, field } = formData?.form || {}
@@ -22,6 +23,37 @@ export const ClientForm = ({ formData }: TContactForm) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setSubmissionError(null)
+
+    const formData = new FormData(e.currentTarget)
+    const data = Object.fromEntries(formData.entries())
+
+    try {
+      if (!data.name || !data.email || !data.message) {
+        throw new Error('All fields are required.')
+      }
+
+      const response = await fetch('api/contactform', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+      if (!response.ok) {
+        throw new Error('Failed to submit form. Please try again.')
+      }
+
+      // Handle success
+      alert('Form submitted successfully!')
+      e.currentTarget.reset()
+    } catch (error) {
+      setSubmissionError(
+        error instanceof Error ? error.message : 'An error occured.'
+      )
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -33,7 +65,7 @@ export const ClientForm = ({ formData }: TContactForm) => {
           className="cf-description"
           dangerouslySetInnerHTML={{ __html: description || '' }}
         />
-        <form className="cf-form">
+        <form className="cf-form" onSubmit={handleSubmit}>
           {field.map((field) => (
             <div key={field.id} className="cf-field">
               <label htmlFor={field.id} className="cf-label">
@@ -73,6 +105,7 @@ export const ClientForm = ({ formData }: TContactForm) => {
               {isSubmitting ? 'Submitting...' : 'Submit'}
             </button>
           )}
+          {submissionError && <p className="cf-error">{submissionError}</p>}
         </form>
       </div>
     </section>
