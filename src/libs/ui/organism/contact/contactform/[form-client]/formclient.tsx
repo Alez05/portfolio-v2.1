@@ -14,7 +14,6 @@ export const ClientForm = ({ formData }: TContactForm) => {
 
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const formRef = useRef<HTMLFormElement>(null)
 
   const { header, field } = formData?.form || {}
   const { subtitle, title } = formData?.form.header || {}
@@ -73,7 +72,7 @@ export const ClientForm = ({ formData }: TContactForm) => {
           className="cf-description"
           dangerouslySetInnerHTML={{ __html: description || '' }}
         />
-        <form ref={formRef} className="cf-form" onSubmit={handleSubmit} > 
+        <form ref={formRef} className="cf-form" onSubmit={handleSubmit} >
           {field.map((field) => (
             <div key={field.id} className="cf-field">
               <label htmlFor={field.id} className="cf-label">
