@@ -11,9 +11,8 @@ export const ClientForm = ({ formData }: TContactForm) => {
   const formRef = useRef<HTMLFormElement>(null)
 
   const [submissionError, setSubmissionError] = useState<string | null>(null)
-
   const [isSubmitting, setIsSubmitting] = useState(false)
-
+  const [submitSuccess, setSubmitSuccess] = useState(false)
 
   const { header, field } = formData?.form || {}
   const { subtitle, title } = formData?.form.header || {}
@@ -28,6 +27,7 @@ export const ClientForm = ({ formData }: TContactForm) => {
     e.preventDefault()
     setIsSubmitting(true)
     setSubmissionError(null)
+    setSubmitSuccess(false)
 
     const formData = new FormData(e.currentTarget)
     const data = Object.fromEntries(formData.entries())
@@ -50,7 +50,8 @@ export const ClientForm = ({ formData }: TContactForm) => {
       }
 
       // ✅ Success!
-      alert('Form submitted successfully!')
+      setSubmitSuccess(true)
+
       if (formRef.current) {
         formRef.current.reset()
       }
@@ -72,7 +73,13 @@ export const ClientForm = ({ formData }: TContactForm) => {
           className="cf-description"
           dangerouslySetInnerHTML={{ __html: description || '' }}
         />
-        <form ref={formRef} className="cf-form" onSubmit={handleSubmit} >
+        {submitSuccess && (
+          <p className="cf-success">
+            Thank you, your message has been sent. If everything is filled in
+            correctly, well get back to you.
+          </p>
+        )}
+        <form ref={formRef} className="cf-form" onSubmit={handleSubmit}>
           {field.map((field) => (
             <div key={field.id} className="cf-field">
               <label htmlFor={field.id} className="cf-label">

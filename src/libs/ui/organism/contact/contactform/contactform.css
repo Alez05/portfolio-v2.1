@@ -40,6 +40,16 @@
   color: #333;
 }
 
+.cf-success {
+  display: flex;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: rgb(0, 238, 0);
+  align-content: center;
+  padding: 10px;
+  font-size: 14px;
+}
+
 .cf-link{
   color: #7b0000;
 }
