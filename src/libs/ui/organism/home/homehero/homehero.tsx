@@ -18,6 +18,7 @@ const HomeHero = async () => {
         <div className="htext-wrapper">
           <h1 className="home-title">{heroConfig.title}</h1>
           <p className="home-description">{heroConfig.description}</p>
+          <h1>Something new</h1>
           <div className="hlink-wrapper">
             <a href={heroConfig.contactMeLink} className="link-red">
               {heroConfig.contactMe}
