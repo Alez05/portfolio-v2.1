@@ -19,6 +19,7 @@ const HomeHero = async () => {
           <h1 className="home-title">{heroConfig.title}</h1>
           <p className="home-description">{heroConfig.description}</p>
           <h1>Something new</h1>
+          <h2>Something new again - monday </h2>
           <div className="hlink-wrapper">
             <a href={heroConfig.contactMeLink} className="link-red">
               {heroConfig.contactMe}
